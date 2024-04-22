@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ 
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="register-page">
+    
+    <div class="register_form-box">
+    <form id='register'  action="response.html" onsubmit="response_save()" target="_blank" class='input-group-register'>
+        <input type='text' name='id' class='input-field' placeholder='ID' required>
+        <input type='text' name='name' class='input-field' placeholder='Name' required>
+        <input type='text' name='uname' class='input-field' placeholder='Username' required>
+        <input type='email' name='email' class='input-field' placeholder='Email Id' required>
+        <input type='password' name='passw' class='input-field' pattern="(?=.*\d).{6,}" placeholder='Enter Password' required>
+        <input type='date' name='dob' class='input-field' max="2004-12-31" placeholder='DOB' required>
+        <div style="display: flex; flex-direction:row; justify-content:space-evenly;">
+        <span style="display: flex; flex-direction:row; justify-content:space-evenly;"><input type='radio' name='gender' class='input-field' placeholder='Username' >Male</span>
+        <span style="display: flex; flex-direction:row; justify-content:space-evenly;"><input type='radio' name='gender' class='input-field' placeholder='Username' >Female</span>
+        </div>
+        <input type='text' name='address' class='input-field' placeholder='Address' required>
+        <!-- <input type='text' name='city' class='input-field' placeholder='City' required> -->
+        <select type="dropdown" class="input-field" id="city" name="city" placeholder='City'>
+            <option value="select">City</option>
+            <option value="Pune">Pune</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Banglore">Banglore</option>
+            <option value="Ratnagiri">Ratnagiri</option>
+            <option value="other">other</option>
+          </select>
+        <input type="number" name='pin' class='input-field' placeholder='Pincode' required>
+        <select type="dropdown" class="input-field" id="state" name="state" placeholder='City'>
+            <option value="select">State</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="other">other</option>
+          </select>
+        <input type="text" name='hobbies' class='input-field' placeholder='Hobbies' required>
+        <button type='submit' name="register" class='submit-btn'>REGISTER</button>
+    </form> 
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function response_save(){
+            let dropd_city=document.getElementById("city")
+            let  dropd_state=document.getElementById("state")
+                let formData=[
+                $('input[name=id]').val(),
+                $('input[name=name]').val(),
+                $('input[name=uname]').val(),
+                $('input[name=email]').val(),
+                $('input[name=dob]').val(),
+                $('input[name=gender]').checked? "Male":"Female",
+                $('input[name=address]').val(),
+                dropd_city.value,
+                $('input[name=pin]').val(),
+                dropd_state.value,
+                $('input[name=hobbies]').val()
+                ]
+
+               
+                localStorage.setItem('formData', JSON.stringify(formData));
+
+        
+               
+        
+        };
+    </script>
+</html>

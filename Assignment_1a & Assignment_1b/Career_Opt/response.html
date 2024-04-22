@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Response</title>
+    <link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body>
+
+    <div id="responseData">
+      
+    </div>
+</body>
+    <script>
+        
+        let formData = JSON.parse(localStorage.getItem("formData"));
+        let headers=["ID","Name","Username","Email","DOB","Gender","Address","City","Pin","State","Hobbies"];
+        // Display formatted form data
+        let responseDiv = document.getElementById("responseData");
+        let response_list=""
+        for(let i=0;i<formData.length;i++){
+            response_list+=
+            `
+            <p> ${headers[i]} : ${formData[i]} </p>
+            `
+        }
+        responseDiv.innerHTML=response_list;
+    
+    </script>
+
+
+</html>
