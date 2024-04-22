@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+    <!-- Home page -->
+    <div data-role="page">
+      <div data-role="header">
+        <h1>Blog Website</h1>
+      </div>
+      <div data-role="navbar">
+        <ul>
+          <li><a href="index.html" class="ui-btn-active">Home</a></li>
+          <li><a href="create_blog.html">Create Blog</a></li>
+        </ul>
+      </div>
+      <div data-role="content" id="content">
+        
+            
+        
+
+      </div>
+    </div>
+    
+  </body>
+  <script>
+    
+    let data=JSON.parse(localStorage.getItem('blogdata'))
+    let title=JSON.parse(localStorage.getItem('blogtitle'))
+    let bloglist = '';
+    
+    if (data && title) {
+        
+        
+        for(let i=0;i<data.length;i++){
+            bloglist += `<div data-role="collapsible">
+                <h3>Title: ${title[i]}</h3>
+                <p>${data[i]}</p>
+            </div>`;
+        }
+
+        let blogdisplay=document.getElementById('content')
+        blogdisplay.innerHTML=bloglist
+    } else {
+        // If there's no data, display a message
+        $('#content').html('<p>No blog posts found.</p>');
+    }
+</script>
+
+</html>

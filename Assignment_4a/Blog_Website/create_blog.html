@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+    <!-- Home page -->
+    <div data-role="page" id="create">
+      <div data-role="header">
+        <h1>Blog Website</h1>
+      </div>
+      <div data-role="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="create_blog.html" class="ui-btn-active">Create Blog</a></li>
+        </ul>
+      </div>
+
+    <div class="content" >
+        
+        <div data-role="content">
+            <center> <h2>Create Blog</h2></center>
+        </div>
+    
+    <div data-role="content" id="createblog">
+        <label>Blog Title :</label>
+        <input type="text" id="title"/><br>
+        <label>Blog Content:</label>
+        <textarea id="content2"></textarea>
+        <button type="submit" class="ui-btn-active" onclick="handleSubmit()">Submit</button>
+        </div>
+    </div>
+  </body>
+  <script>
+    function handleSubmit() {
+        
+        let title = document.getElementById('title').value;
+        let content = document.getElementById('content2').value;
+
+        
+        let storedTitles = JSON.parse(localStorage.getItem('blogtitle')) || [];
+        let storedData = JSON.parse(localStorage.getItem('blogdata')) || [];
+
+        
+        storedTitles.push(title);
+        storedData.push(content);
+
+        
+        localStorage.setItem('blogtitle', JSON.stringify(storedTitles));
+        localStorage.setItem('blogdata', JSON.stringify(storedData));
+
+        
+        document.getElementById('title').value = '';
+        document.getElementById('content2').value = '';
+
+        
+        alert('Blog submitted successfully!');
+    }
+</script>
+
+</html>
