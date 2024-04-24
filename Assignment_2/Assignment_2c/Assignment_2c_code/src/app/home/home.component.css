@@ -1,0 +1,35 @@
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 4% auto;
+  height: 200px;
+  width: 600px;
+  padding: 200px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.profile-image {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 120px;
+  left: 330px;
+}
+
+.profile-content {
+  position: absolute;
+  top: 170px;
+  left: 700px;
+  font-size: 20px;
+}
+
+.profile-content div {
+  background: #d3e4ff;
+  margin-bottom: 15px;
+  color: black;
+  padding: 5px 15px;
+  width: 350px;
+  border-radius: 10px;
+}

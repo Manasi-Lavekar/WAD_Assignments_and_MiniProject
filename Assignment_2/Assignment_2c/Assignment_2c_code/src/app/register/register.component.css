@@ -1,0 +1,96 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  margin: 4% auto;
+  height: 600px;
+}
+.register-img {
+  background-color: #d3e4ff;
+  padding: 100px 50px;
+}
+.register-div {
+  padding: 20px 50px;
+  background-color: #ffffff;
+}
+.register-form {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  height: 380px;
+  overflow-y: auto;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 800px;
+  margin-bottom: 15px;
+}
+.register-div p {
+  color: #636363;
+  margin-bottom: 40px;
+  font-size: 30px;
+  margin-left: 45px;
+}
+
+form input, select{
+  margin-top: 20px;
+  padding: 4px 20px;
+  border-radius: 8px;
+  width: 250px;
+  height: 35px;
+  border: 2px solid #0062ff;
+  color: #0f4bf4;
+  font-size: 17px;
+}
+form select{
+  width: 295px;
+  height: 45px;
+}
+form small{
+  color: red;
+}
+.register-div button {
+  background-color: #0f4bf4;
+  width: 100px;
+  height: 45px;
+  padding: 5px 20px;
+  border: 2px solid white;
+  color: white;
+  border-radius: 10px;
+  margin: 15px 30px 0px 45px;
+  font-size: 17px;
+}
+.register-div span{
+    font-size: 17px;
+    color:#636363;
+
+}
+.register-div a{
+    text-decoration: none;
+    color: #0f4bf4;
+    font-weight: bold;
+}
+.gender-ip{
+    display: flex;
+    width: 250px;
+    height: 35px;
+    justify-content: space-around;
+}
+.gender{
+    display: flex;
+    width: 100px;
+    margin-top:15px;
+}
+.gender p{
+    font-size: 17px;
+    margin:2px 2px;
+    color:#0f4bf4;
+}
+.gender input{
+    font-size: 16px;
+    margin: 0px;
+    height: 18px;
+    width: 18px;
+    
+}

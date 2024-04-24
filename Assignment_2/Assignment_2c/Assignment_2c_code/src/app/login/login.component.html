@@ -1,0 +1,29 @@
+<div class="login-container">
+  <div class="login-img">
+    <img src="../../assets/images/amico.png" />
+  </div>
+  <div class="login-div">
+    <div class="login-form">
+      <form [formGroup]="loginForm">
+        <p>Login</p>
+        <input type="email" formControlName="email" placeholder="Email" />
+        <small *ngIf="loginForm.controls['email'].invalid"
+          >Email is incorrect.</small
+        >
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Password "
+        />
+        <small *ngIf="loginForm.controls['password'].invalid"
+          >Password is required.</small
+        >
+        <span
+          ><button [disabled]="loginForm.invalid" (click)="login()" type="button">
+            Login</button
+          ><span>If you are new?<a href="/register">Register</a></span></span
+        >
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<!-- Inside your template -->
+<div *ngFor="let info of infoValues" >
+   <div *ngIf="infoValues.length > 0" class="profile">
+    <div *ngIf="info.gender==='Female'" class="image">
+      <img src="../../assets/images/undraw_Female_avatar_efig.png" class="profile-image"/>
+    </div>
+    <div *ngIf="info.gender==='Male'" class="image">
+      <img src="../../assets/images/undraw_Male_avatar_g98d.png" class="profile-image" />
+    </div>
+   <div class="profile-content">
+      <div>ID: {{ info.id }}</div>
+      <div>Name: {{ info.name }}</div>
+      <div>Username: {{ info.username }}</div>
+      <div>Email: {{ info.email }}</div>
+      <div>Gender: {{ info.gender }}</div>
+      <!-- <div>Date of Birth: {{ info.dob | date }}</div> Ensure date formatting -->
+      <div>Address: {{ info.address }}</div>
+      <div>City: {{ info.city }}</div>
+      <div>Pincode: {{ info.pincode }}</div>
+      <div>State: {{ info.state }}</div>
+      <div>Hobbies: {{ info.hobbies }}</div>
+      </div>
+    </div>
+  </div>
+
+<div *ngIf="infoValues.length === 0">
+  <p>No registered information found.</p>
+</div>

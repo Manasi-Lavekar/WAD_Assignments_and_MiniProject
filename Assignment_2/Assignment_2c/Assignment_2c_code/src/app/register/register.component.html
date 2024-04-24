@@ -1,0 +1,60 @@
+<div class="register-container">
+    <div class="register-img">
+      <img src="../../assets/images/amico.png"/>
+    </div>
+    <div class="register-div">
+        <p>Register</p>
+      <div class="register-form">
+      <form [formGroup]="registerForm" >
+        
+        <input  type="text" formControlName="id" placeholder="ID" />
+        <small *ngIf="registerForm.controls['id'].invalid">ID is required.</small>
+        <input  type="text" formControlName="name" placeholder="Name" />
+        <small *ngIf="registerForm.controls['name'].invalid">Name is required.</small>
+        <input  type="text" formControlName="username" placeholder="Username" />
+        <small *ngIf="registerForm.controls['username'].invalid">Username is required.</small>
+        <input  type="email" formControlName="email" placeholder="Email" />
+        <small *ngIf="registerForm.controls['email'].invalid">Email is incorrect.</small>
+        <input  type="password" formControlName="password" placeholder="Password" />
+        <small *ngIf="registerForm.controls['password'].invalid">Password is required.</small>
+        <input   type="date" max="2004-12-31" formControlName="dob"/>
+        <div class="gender-ip">
+            <div class="gender" >
+                <input type="radio" formControlName="gender" value="Male"/>
+                <label for="Male">Male</label>
+            </div>
+            <div class="gender" >
+                <input type="radio" formControlName="gender" value="Female"/>
+                <label for="Female">Female</label>
+            </div>
+        </div>
+        <input  type="text" formControlName="address" placeholder="Address" />
+        <small *ngIf="registerForm.controls['address'].invalid">Address is required.</small>
+        <select formControlName="city">
+            <option value="">City</option>
+            <option value="Pune">Pune</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Banglore">Banglore</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Ratnagiri">Ratnagiri</option>
+        </select>
+        <small *ngIf="registerForm.controls['city'].invalid">City is required.</small>
+        <input  type="text" formControlName="pincode" placeholder="Pincode" />
+        <small *ngIf="registerForm.controls['pincode'].invalid">Pincode is required.</small>
+        <select formControlName="state">
+            <option value="">State</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+        </select>
+        <small *ngIf="registerForm.controls['state'].invalid">State is required.</small>
+        <input  type="text" placeholder="Hobbies" formControlName="hobbies"/>
+      </form>
+      
+    </div>
+    <span><button [disabled]="registerForm.invalid" (click)="register()" type="button">Register</button><span>Already have an account?<a href="/login">Login</a></span></span>
+    </div>
+  </div>
+  
